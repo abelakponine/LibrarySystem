@@ -34,6 +34,6 @@ func main() {
 
 	router := gin.Default()
 	routers.InitializeRouter(router.Group("development"), "Development")
-	routers.InitializeRouter(router.Group("production"), "Production")
+	routers.InitializeRouter(router.Group("app"))
 	router.Run()
 }

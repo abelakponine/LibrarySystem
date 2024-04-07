@@ -4,7 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func InitializeRouter(r *gin.RouterGroup, environment string) {
+func InitializeRouter(r *gin.RouterGroup, env ...string) {
+
+	environment := "Production"
+
+	if len(env) > 0 {
+		environment = env[0]
+	}
 
 	var routes = r.Group("/library")
 	{
